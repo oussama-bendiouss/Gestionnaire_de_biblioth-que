@@ -38,7 +38,7 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Editeur f = new Editeur("assad","len");
+        Editeur f = new Editeur("assad");
 
     }
 }

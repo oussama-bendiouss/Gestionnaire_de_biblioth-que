@@ -38,7 +38,7 @@ public class ConnectionBD {
         connect();
     }
     */
-    public  Connection connect() {
+  /*  public  Connection connect() {
         // SQLite connection string
         String url = "jdbc:sqlite:C:/Users/Fondation/Desktop/ST/BaseDonnées/BD.db";
         Connection conn = null;
@@ -49,5 +49,16 @@ public class ConnectionBD {
         }
         return conn;
     }
-
+*/
+    public static Connection connect() {
+        // SQLite connection string
+        String url = "jdbc:sqlite:C:/Users/Fondation/Desktop/ST/BaseDonnées/BD.db";
+        Connection conn = null;
+        try {
+            conn = DriverManager.getConnection(url);
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return conn;
+    }
 }

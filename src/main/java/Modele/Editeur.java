@@ -2,16 +2,15 @@ package Modele;
 import Controleur.GestionBD;
 
 public class Editeur {
-    public String name;
-    public String capacity;
+    public String nom;
 
-    public Editeur(String name, String capacity){
-        this.name = name;
-        this.capacity = capacity;
+
+    public Editeur(String nom){
+      this.nom = nom;
         Ajouter();
     }
     public  void Ajouter(){
-        GestionBD.insert(this.name, this.capacity);
+        GestionBD.insert_Editeur(this.nom);
 
         
     }
