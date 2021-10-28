@@ -9,6 +9,9 @@ public class Oeuvre {
     String Année;
 
     // @Constructeur
+    public Oeuvre(){
+
+    }
     public Oeuvre(String Titre, String Description, String Année){
         this.Titre = Titre;
         this.Description = Description;
@@ -33,15 +36,14 @@ public class Oeuvre {
     // @Setter
     public void setAnnée(String année){
         this.Année= année;
-
     }
     public void setTitre(String Titre){
         this.Titre = Titre;
-
-
     }
     public void setDescription(String Description){
         this.Description = Description;
-
+    }
+    public void setID_Oeuvre(int ID_Oeuvre){
+        this.ID_Oeuvre = ID_Oeuvre;
     }
 }

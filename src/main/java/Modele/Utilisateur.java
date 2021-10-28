@@ -11,6 +11,9 @@ public class Utilisateur {
 
 
     // @Constructeur
+    public Utilisateur(){
+
+    }
     public Utilisateur(String prenom, String nom, String mail, int Nb_Livre, int ID_Catégorie){
         this.ID_Catégorie = ID_Catégorie;
         this.Nom =nom;
@@ -22,7 +25,6 @@ public class Utilisateur {
     }
 
     // @Getter
-
     public int getID_Utilisateur() {
         return this.ID_Utilisateur;
     }
@@ -43,24 +45,22 @@ public class Utilisateur {
     }
 
     // @Setter
+    public void setID_Utilisateur(int ID_Utilisateur){
+        this.ID_Utilisateur = ID_Utilisateur;
+    }
     public void setPrenom(String prenom){
         this.Prenom = prenom;
-
     }
     public void setNom(String nom){
         this.Nom= nom;
-
     }
     public void setMail(String mail){
         this.Mail= mail;
-
     }
     public void setID_Catégorie(int ID_Catégorie){
         this.ID_Catégorie= ID_Catégorie;
-
     }
     public void setNb_Livre(int Nb_Livre){
         this.Nb_Livre = Nb_Livre;
-
     }
 }

@@ -8,6 +8,9 @@ public class Interdiciton {
     String Fin;
 
     // @Constructeur
+    public Interdiciton(){
+
+    }
     public Interdiciton(int ID_Utilisateur,String Début, String Fin){
         this.Début = Début;
         this.Fin = Fin;
@@ -16,17 +19,17 @@ public class Interdiciton {
     }
 
     // @Setter
+    public void setID_Interdiction(int ID_Interdiction){
+        this.ID_Interdiction= ID_Interdiction;
+    }
     public void setFin(String Fin){
         this.Fin=Fin;
-
     }
     public void setDébut(String Début){
         this.Début = Début;
-
     }
     public void setID_Utilisateur(int ID_Utilisateur){
         this.ID_Utilisateur = ID_Utilisateur;
-
     }
 
     // @Getter

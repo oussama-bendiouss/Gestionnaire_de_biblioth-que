@@ -8,6 +8,9 @@ public class Categorie {
     int ID_Catégorie;
     String Nom;
     // @Constructeur
+    public Categorie(){
+
+    }
     public Categorie(String nom, int Max_E, int Max_D){
         this.Max_D= Max_D;
         this.Max_E = Max_E;
@@ -29,18 +32,19 @@ public class Categorie {
         return this.Max_D;
     }
 
+
     // @Setter
+    public void setID_Catégorie(int ID_Catégorie){
+        this.ID_Catégorie = ID_Catégorie;
+    }
     public void setMax_E(int Max_E){
         this.Max_E = Max_E;
-
     }
     public void setMax_D(int Max_D){
         this.Max_D= Max_D;
-
     }
     public void setNom(String nom){
         this.Nom=nom;
-
     }
 
 

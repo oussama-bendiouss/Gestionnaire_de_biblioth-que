@@ -4,6 +4,7 @@ import Modele.*;
 
 import java.sql.*;
 
+import static Controleur.GestionBD_SELECT.*;
 import static java.sql.Date.valueOf;
 
 /**
@@ -44,9 +45,19 @@ public class Main {
        // Edition fd = new Edition(403,2,"2018-08-30",2);
         //Categorie cat1 = new Categorie("Prof", 15,15);
         //Utilisateur uti1 = new Utilisateur("Hajar", "Ben","hajar.b2000@gmail.com",10,2);
-        //Interdiciton in1 = new Interdiciton(1,"2021-10-28","2021-10-29");
-        Emprunter em1 = new Emprunter(1,1,"2021-10-28","2021-10-29");
+       // Interdiciton in1 = new Interdiciton(1,"2021-10-28","2021-10-29");
+        //Emprunter em1 = new Emprunter(1,1,"2021-10-28","2021-10-29");
+  /*System.out.println(select_Interdiction().get(0).getID_Utilisateur());
+        System.out.println(select_Interdiction().get(0).getDébut());
+        System.out.println(select_Interdiction().get(0).getFin());
+        System.out.println(select_Interdiction().get(0).getID_Interdiction());
+*/
 
 
+        System.out.println(select_Catégorie().get(2).getID_Catégorie());
+        System.out.println(select_Catégorie().get(2).getMax_D());
+        System.out.println(select_Catégorie().get(2).getMax_E());
+        System.out.println(select_Catégorie().get(2).getNom());
     }
+
 }

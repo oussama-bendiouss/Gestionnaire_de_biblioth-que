@@ -8,6 +8,9 @@ public class Edition {
     int ID_Editeur;
 
     // @Constructeur
+    public Edition(){
+
+    }
     public Edition(int ISBN, int ID_Oeuvre, String Année, int ID_Editeur){
         this.ISBN = ISBN;
         this.ID_Oeuvre = ID_Oeuvre;
@@ -20,20 +23,17 @@ public class Edition {
     // @Setter
     public void setID_Oeuvre(int ID_Oeuvre){
         this.ID_Oeuvre = ID_Oeuvre;
-
     }
     public void setISBN(int ISBN){
         this.ISBN = ISBN;
-
     }
     public void setAnnée(String année){
         this.Année = année;
-
     }
     public void setID_Editeur( int ID_Editeur){
         this.ID_Editeur = ID_Editeur;
-
     }
+
 
     // @Getter
     public int getID_Editeur(){

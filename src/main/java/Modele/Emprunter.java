@@ -10,6 +10,9 @@ public class Emprunter {
     String Fin;
 
     // @Constructeur
+    public Emprunter(){
+
+    }
     public Emprunter(int ID_Utilisateur, int ID_Oeuvre,String Début, String Fin){
         this.Début = Début;
         this.Fin = Fin;
@@ -38,17 +41,17 @@ public class Emprunter {
     // @Setter
     public void setDébut(String Début){
         this.Début = Début;
-
     }
     public void setFin(String Fin){
         this.Fin = Fin;
-
     }
     public void setID_Oeuvre(int ID_Oeuvre){
         this.ID_Oeuvre = ID_Oeuvre;
-
     }
     public void setID_Utilisateur(int ID_Utilisateur){
         this.ID_Utilisateur = ID_Utilisateur;
          }
+    public void setID(int ID){
+        this.ID = ID;
+    }
 }
