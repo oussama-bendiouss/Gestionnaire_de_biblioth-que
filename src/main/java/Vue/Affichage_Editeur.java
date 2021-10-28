@@ -44,7 +44,10 @@ public class Affichage_Editeur   {
         btnRefresh.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                primaryStage.setOnShown( (evt) -> loadTable_Editeur(tblCustomers) );
+
+                primaryStage.close();
+                Stage stage =new Stage();
+                Create_Editeur_Scene(stage);
             }});
 
         HBox topRightControls = new HBox();
@@ -64,6 +67,19 @@ public class Affichage_Editeur   {
         bottomControls.setAlignment(Pos.BOTTOM_RIGHT );
         VBox.setMargin( bottomControls, new Insets(10.0d) );
 
+        HBox bottomControls_Left = new HBox();
+        bottomControls_Left.setAlignment(Pos.BOTTOM_LEFT );
+        VBox.setMargin( bottomControls_Left, new Insets(10.0d) );
+        Button btnAdd = new Button("Ajouter");
+        btnAdd.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                Stage stage_Editeur = new Stage();
+                 new Ajout_Editeur().Creat_Editeur(stage_Editeur);
+            }
+        });
+        bottomControls_Left.getChildren().add(btnAdd);
+
         Button btnClose = new Button("Close");
         btnClose.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -71,7 +87,7 @@ public class Affichage_Editeur   {
                 primaryStage.close();
             }});
 
-        bottomControls.getChildren().add( btnClose );
+        bottomControls.getChildren().addAll( bottomControls_Left, btnClose );
 
         vbox.getChildren().addAll(
                 topControls,
@@ -85,9 +101,10 @@ public class Affichage_Editeur   {
         primaryStage.setScene( scene );
         primaryStage.setWidth( 800 );
         primaryStage.setHeight( 600 );
-        primaryStage.setTitle("Les oeuvres");
+        primaryStage.setTitle("Les Editeurs");
         primaryStage.setOnShown( (evt) -> loadTable_Editeur(tblCustomers) );
         primaryStage.show();
+
     }
 
 
