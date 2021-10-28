@@ -14,7 +14,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 
-public class Principale extends Application {
+public class Principale_Test extends Application {
 
 
     // private Parent createContent() {

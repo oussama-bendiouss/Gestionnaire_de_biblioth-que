@@ -1,6 +1,6 @@
 package Vue;
 
-import Modele.Oeuvre;
+import Modele.Edition;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -14,7 +14,7 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import static Controleur.GestionBD_SELECT.select_Oeuvre;
+import static Controleur.GestionBD_SELECT.select_Edition;
 
 public class Affichage_Edition extends Application   {
     @Override
@@ -25,21 +25,23 @@ public class Affichage_Edition extends Application   {
         HBox topControls = new HBox();
         VBox.setMargin( topControls, new Insets(10.0d) );
         topControls.setAlignment( Pos.BOTTOM_LEFT );
-        TableView<Oeuvre> tblCustomers = new TableView<>();
+        TableView<Edition> tblCustomers = new TableView<>();
         tblCustomers.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
         VBox.setMargin( tblCustomers, new Insets(0.0d, 10.0d, 10.0d, 10.0d) );
         VBox.setVgrow( tblCustomers, Priority.ALWAYS );
 
-        TableColumn<Oeuvre, String> Titre = new TableColumn<>("Titre");
-        Titre.setCellValueFactory(new PropertyValueFactory<>("titre"));
+        TableColumn<Edition, Integer> ISBN = new TableColumn<>("ISBN");
+        ISBN.setCellValueFactory(new PropertyValueFactory<>("ISBN"));
 
-        TableColumn<Oeuvre, String> Description = new TableColumn<>("Description");
-        Description.setCellValueFactory(new PropertyValueFactory<>("description"));
+        TableColumn<Edition, Integer> ID_Oeuvre = new TableColumn<>("ID_Oeuvre");
+        ID_Oeuvre.setCellValueFactory(new PropertyValueFactory<>("ID_Oeuvre"));
 
-        TableColumn<Oeuvre, String> Année = new TableColumn<>("Année");
+        TableColumn<Edition, String > Année = new TableColumn<>("Année");
         Année.setCellValueFactory(new PropertyValueFactory<>("Année"));
+        TableColumn<Edition, Integer > ID_Editeur = new TableColumn<>("AID_Editeur");
+        ID_Editeur.setCellValueFactory(new PropertyValueFactory<>("ID_Editeur"));
 
-        tblCustomers.getColumns().addAll( Titre, Description, Année );
+        tblCustomers.getColumns().addAll( ID_Editeur,ID_Oeuvre, ISBN, Année );
         Button btnRefresh = new Button("Refresh");
         btnRefresh.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -92,9 +94,9 @@ public class Affichage_Edition extends Application   {
 
 
 
-   private void loadTable(TableView<Oeuvre> tblCustomers) {
-       for (int i = 0; i < select_Oeuvre().size(); i++) {
-           tblCustomers.getItems().add(select_Oeuvre().get(i));
+   private void loadTable(TableView<Edition> tblCustomers) {
+       for (int i = 0; i < select_Edition().size(); i++) {
+           tblCustomers.getItems().add(select_Edition().get(i));
        }
 
        // tblCustomers.getItems().add(new Oeuvre("Hola", "Washington fff","2020-10-21"));

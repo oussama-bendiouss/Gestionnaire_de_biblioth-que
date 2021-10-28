@@ -20,7 +20,7 @@ public class GestionBD_UPDATE {
         }
     }
     public static void insert_Auteur(String nom, String prenom) {
-        String sql = "UPDATE Auteur "
+        String sql = "UPDATE Auteur_Test "
                 + " SET Nom = ?, Prenom = ?, Categorie = ?,TypeOeuvre = ? "
                 + "WHERE id = ?";
 
@@ -73,7 +73,7 @@ public class GestionBD_UPDATE {
         }
     }
     public static void insert_Utilisateur(String nom, String prenom,String mail, int ID_Catégorie, int nbp) {
-        String sql = "INSERT INTO Utilisateur(Nom, Prenom, Mail, Nb_livre, ID_Catégorie) VALUES(?,?,?,?,?)";
+        String sql = "INSERT INTO Utilisateur_Test(Nom, Prenom, Mail, Nb_livre, ID_Catégorie) VALUES(?,?,?,?,?)";
 
         try (Connection conn = connect();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {

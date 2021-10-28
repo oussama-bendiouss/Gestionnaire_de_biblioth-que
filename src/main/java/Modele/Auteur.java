@@ -2,7 +2,7 @@ package Modele;
 import Controleur.GestionBD_INSERT;
 
 
-public class Auteur extends Vue.Auteur {
+public class Auteur  {
      String nom;
      String prenom;
     int ID_Auteur;

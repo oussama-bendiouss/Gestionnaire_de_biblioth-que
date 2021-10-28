@@ -11,7 +11,7 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class Auteur extends Application {
+public class Auteur_Test extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 

@@ -45,7 +45,7 @@ public class Test {
         //Ecrire s = new Ecrire(1,1);
        // Edition fd = new Edition(403,2,"2018-08-30",2);
         //Categorie cat1 = new Categorie("Prof", 15,15);
-        //Utilisateur uti1 = new Utilisateur("Hajar", "Ben","hajar.b2000@gmail.com",10,2);
+        //Utilisateur_Test uti1 = new Utilisateur_Test("Hajar", "Ben","hajar.b2000@gmail.com",10,2);
        // Interdiciton in1 = new Interdiciton(1,"2021-10-28","2021-10-29");
         //Emprunter em1 = new Emprunter(1,1,"2021-10-28","2021-10-29");
   /*System.out.println(select_Interdiction().get(0).getID_Utilisateur());
