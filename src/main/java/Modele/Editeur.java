@@ -3,7 +3,7 @@ import Controleur.GestionBD_INSERT;
 
 public class Editeur {
     String nom;
-    int ID_Editeur;
+    int ID_Editor;
 
 
     // @Constructeur
@@ -15,8 +15,8 @@ public class Editeur {
 
     }
     // @Getter
-    public int getID_Editeur(){
-        return this.ID_Editeur;
+    public int getID_Editor(){
+        return this.ID_Editor;
     }
     public String getNom(){
         return this.nom;
@@ -27,8 +27,8 @@ public class Editeur {
     public void setNom(String nom){
         this.nom = nom;
     }
-    public void setID_Editeur(int ID_Editeur){
-        this.ID_Editeur = ID_Editeur;
+    public void setID_Editor(int ID_Editor){
+        this.ID_Editor = ID_Editor;
     }
 
 

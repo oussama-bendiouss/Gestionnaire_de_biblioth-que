@@ -30,15 +30,15 @@ public class Affichage_Editeur extends Application   {
         VBox.setMargin( tblCustomers, new Insets(0.0d, 10.0d, 10.0d, 10.0d) );
         VBox.setVgrow( tblCustomers, Priority.ALWAYS );
 
-       // TableColumn<Editeur, Integer> ID_E = new TableColumn<>("ID_E");
-        //ID_E.setCellValueFactory(new PropertyValueFactory<>("ID_E"));
+        TableColumn<Editeur, Integer> ID_E = new TableColumn<>("ID_Editor");
+        ID_E.setCellValueFactory(new PropertyValueFactory<>("ID_Editor"));
 
         TableColumn<Editeur, String> Nom = new TableColumn<>("Nom");
         Nom.setCellValueFactory(new PropertyValueFactory<>("Nom"));
 
 
 
-        tblCustomers.getColumns().addAll(  Nom );
+        tblCustomers.getColumns().addAll(  ID_E,Nom );
         Button btnRefresh = new Button("Refresh");
         btnRefresh.setOnAction(new EventHandler<ActionEvent>() {
             @Override

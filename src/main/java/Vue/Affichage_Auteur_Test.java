@@ -17,15 +17,11 @@ import javafx.stage.Stage;
 import static Controleur.GestionBD_SELECT.select_Auteur;
 
 
-public class Affichage_Auteur extends Application   {
-    public Scene su ;
+public class Affichage_Auteur_Test    {
 
-    public Scene getS() {
-        return su;
-    }
 
-    @Override
-    public void start(Stage primaryStage) throws Exception {
+
+    public Scene CreateScene() {
 
         VBox vbox = new VBox();
 
@@ -50,7 +46,7 @@ public class Affichage_Auteur extends Application   {
         btnRefresh.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                primaryStage.setOnShown( (evt) -> loadTable(tblCustomers) );
+               // primaryStage.setOnShown( (evt) -> loadTable(tblCustomers) );
             }});
 
         HBox topRightControls = new HBox();
@@ -74,7 +70,7 @@ public class Affichage_Auteur extends Application   {
         btnClose.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                primaryStage.close();
+                //primaryStage.close();
             }});
 
         bottomControls.getChildren().add( btnClose );
@@ -88,14 +84,14 @@ public class Affichage_Auteur extends Application   {
 
         Scene scene = new Scene(vbox );
 
-        primaryStage.setScene( scene );
-        primaryStage.setWidth( 800 );
-        primaryStage.setHeight( 600 );
-        primaryStage.setTitle("Les oeuvres");
-        primaryStage.setOnShown( (evt) -> loadTable(tblCustomers) );
-        primaryStage.show();
-        su = scene;
-
+      //  primaryStage.setScene( scene );
+       // primaryStage.setWidth( 800 );
+        //primaryStage.setHeight( 600 );
+        //primaryStage.setTitle("Les oeuvres");
+        //primaryStage.setOnShown( (evt) -> loadTable(tblCustomers) );
+        //primaryStage.show();
+        //su = scene;
+ return scene;
     }
 
 

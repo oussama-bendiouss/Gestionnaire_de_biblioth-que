@@ -5,7 +5,6 @@ import Modele.*;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.List;
 
 import static Controleur.ConnectionBD.connect;
 
@@ -22,7 +21,7 @@ public class GestionBD_SELECT {
             while (rs.next()) {
                 Editeur editeur = new Editeur();
                 editeur.setNom(rs.getString("Nom"));
-                editeur.setID_Editeur(rs.getInt("ID_Editeur"));
+                editeur.setID_Editor(rs.getInt("ID_Editeur"));
                 liste_Editeur.add(editeur);
                 //System.out.println(editeur.getID_Editeur());
                 //System.out.println(editeur.getNom());

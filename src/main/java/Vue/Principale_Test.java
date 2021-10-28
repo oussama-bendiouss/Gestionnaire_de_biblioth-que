@@ -4,13 +4,12 @@ import javafx.application.Application;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Priority;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
 
@@ -19,52 +18,70 @@ public class Principale_Test extends Application {
 
     // private Parent createContent() {
     //   return new StackPane(new Text("Hello World"));
-    //}
+
 
     @Override
     public void start(Stage stage) throws Exception {
-        /*VBox rootG = new VBox();
+
+        /*HBox rootG = new HBox();
         rootG.setSpacing(10);
-        HBox root = new HBox();
+        VBox root = new VBox();
         root.setSpacing(10);
         root.setPadding(new Insets(10,10,10,10));
 
-        Button b1 = new Button("je suis");
+        Button b1 = new Button("Oeuvre");
 
-        b1.setPrefSize(100,100);
+        b1.setPrefSize(100,60);
         root.getChildren().add(b1);
-        Button b2 = new Button("je ne suis pas");
-        b2.setPrefSize(100,100);
+        Button b2 = new Button("Auteur");
+        b2.setPrefSize(100,60);
         root.getChildren().add(b2);
 
 
 
-        VBox root1 = new VBox();
-        root1.setSpacing(10);
-
-        Button b11 = new Button("hola");
-        b11.setPrefSize(100,100);
-        Button b12 = new Button("salam");
-        b12.setPrefSize(200,100);
-        root1.getChildren().addAll(b11,b12);
 
 
+        Button b3 = new Button("Edition");
+        b3.setPrefSize(100,60);
+        b3.setOnAction(new EventHandler<ActionEvent>() {
+                           @Override
+                           public void handle(ActionEvent actionEvent) {
+                             //  stage.setScene();
+
+                           }
+                       });
+                root.getChildren().add(b3);
+
+        Button b4 = new Button("Editeur");
+        b4.setPrefSize(100,60);
+        root.getChildren().add(b4);
+        Button b5 = new Button("Catégorie");
+        b5.setPrefSize(100,60);
+        root.getChildren().add(b5);
+        Button b6 = new Button("Emprunte");
+        b6.setPrefSize(100,60);
+        root.getChildren().add(b6);
+        Button b7 = new Button("Interdiction");
+        b7.setPrefSize(100,60);
+         root.getChildren().add(b7);
 
 
-        HBox root2 = new HBox();
-        root2.setSpacing(20);
-        CheckBox c = new CheckBox("Check");
-        RadioButton r = new RadioButton("Radio");
-        TextField t = new TextField("ha");
-        t.setPrefSize(100,20);
-        root2.getChildren().addAll(r,c,t);
 
-        rootG.getChildren().addAll(root,root1,root2);
-        Scene s2 = new Scene(rootG,600,600);
+
+
+        VBox rootG1 = new VBox();
+        rootG.setSpacing(10);
+
+        rootG.getChildren().addAll(root);
+        Scene s2 = new Scene(rootG,200,600);
         stage.setTitle("test3");
-        stage.setScene(s2);
+        Scene s = new Affichage_Auteur().getS();
+        stage.setScene(s);
 
-        stage.show();*/
+
+        stage.show();
+
+         */
         /*Button b31 = new Button("ouvrir une nouvelle fenetre");
         b31.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -94,12 +111,12 @@ public class Principale_Test extends Application {
         stage.setTitle("Premier");
         stage.setScene(s4);
         stage.show();
-    }*/
+    }
 
     /*public static void main(String[] args) {
-        launch(args);
-    }*/
-        /*VBox root4 = new VBox();
+        launch(args);*/
+/*
+        VBox root4 = new VBox();
         root4.setSpacing(10);
 
         StackPane root41 = new StackPane();
@@ -116,7 +133,31 @@ public class Principale_Test extends Application {
         b41.setPadding(new Insets(5,5,5,5));
         b41.setVisible(false);
         root41.getChildren().add(b41);
+         Button b31 = new Button("ouvrir une nouvelle fenetre");
+        b31.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+               Label  l = new Label("c'est dans la deuxième fenêtre");
+                HBox d = new HBox();
+                d.getChildren().add(l);
+                Scene s3 = new Scene(d,600,600);
+                Stage g = new Stage();
+                g.setTitle("deuxième ");
+                g.setScene(s3);
+                g.show();
 
+                new Thread(){
+                    @Override
+                    public void run() {
+                       launch(Affichage_Editeur.class);
+                    }
+                }.start();
+                };
+
+
+
+        });
+        root41.getChildren().add(b31);
         CheckBox c41 = new CheckBox("I'am a check box");
         // c41.setOpacity(1);
         c41.setStyle("-fx-background-color:olive");
@@ -127,9 +168,10 @@ public class Principale_Test extends Application {
         Scene s411 = new Scene(root41,400,300);
         stage.setTitle("test");
         stage.setScene(s411);
-        stage.show();
+        stage.show();*/
 
-*/VBox vbox = new VBox();
+
+        /*VBox vbox = new VBox();
 
         GridPane gp = new GridPane();
         gp.setPadding( new Insets(10) );
@@ -182,7 +224,7 @@ public class Principale_Test extends Application {
         stage.setWidth( 736 );
         stage.setHeight( 414  );
         stage.show();
-
+*/
 
     }
 }
