@@ -1,4 +1,4 @@
-
+package Test;
 
 import Modele.*;
 
@@ -11,7 +11,7 @@ import static java.sql.Date.valueOf;
  *
  * @author sqlitetutorial.net
  */
-public class Main {
+public class Test {
 
     /**
      * Connect to a sample database
@@ -39,8 +39,9 @@ public class Main {
      */
     public static void main(String[] args) {
         //Editeur f = new Editeur("Talis");
+        Oeuvre o = new Oeuvre("1h","Ona va arriver","2000-10-21");
         Auteur a = new Auteur("Rapha", "Taylor");
-       //Oeuvre d = new Oeuvre("5H", "5h pour faire un projet", "2021-10-28");
+       //Affichage_Oeuvre d = new Affichage_Oeuvre("5H", "5h pour faire un projet", "2021-10-28");
         //Ecrire s = new Ecrire(1,1);
        // Edition fd = new Edition(403,2,"2018-08-30",2);
         //Categorie cat1 = new Categorie("Prof", 15,15);

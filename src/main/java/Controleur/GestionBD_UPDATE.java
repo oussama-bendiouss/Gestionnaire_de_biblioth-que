@@ -34,7 +34,7 @@ public class GestionBD_UPDATE {
         }
     }
     public static void insert_Oeuvre(String titre, String annee,String description) {
-        String sql = "INSERT INTO Oeuvre(Titre, Description, Année) VALUES(?,?,?)";
+        String sql = "INSERT INTO Affichage_Oeuvre(Titre, Description, Année) VALUES(?,?,?)";
 
         try (Connection conn = connect();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {

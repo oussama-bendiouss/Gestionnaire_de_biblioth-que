@@ -1,7 +1,7 @@
 package Controleur;
 
 import Modele.*;
-import jdk.jshell.execution.Util;
+
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -126,7 +126,7 @@ return liste_Edition;
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-        /*  @Test
+        /*  @Test.Test
         finally {
             System.out.println((liste_Ecrire.get(0).getID_Oeuvre()));
             System.out.println((liste_Ecrire.get(0).getID_Auteur()));
@@ -158,7 +158,7 @@ return liste_Edition;
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-          //@Test
+          //@Test.Test
      /*   finally {
             System.out.println((liste_Utilisateur));
             System.out.println((liste_Utilisateur.get(0).getID_Catégorie()));
@@ -191,7 +191,7 @@ return liste_Edition;
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-        //@Test
+        //@Test.Test
      /*   finally {
             System.out.println((liste_Emprunter));
             System.out.println((liste_Emprunter.get(0).getID_Catégorie()));
@@ -225,7 +225,7 @@ return liste_Edition;
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-        //@Test
+        //@Test.Test
      /*   finally {
             System.out.println((liste_Utilisateur));
             System.out.println((liste_Utilisateur.get(0).getID_Catégorie()));
@@ -260,7 +260,7 @@ return liste_Edition;
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-        //@Test
+        //@Test.Test
      /*   finally {
             System.out.println((liste_Utilisateur));
             System.out.println((liste_Utilisateur.get(0).getID_Catégorie()));

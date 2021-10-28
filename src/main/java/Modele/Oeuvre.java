@@ -6,17 +6,17 @@ public class Oeuvre {
     int ID_Oeuvre;
     String Titre;
     String Description;
-    String Année;
+    String Annee;
 
     // @Constructeur
     public Oeuvre(){
 
     }
-    public Oeuvre(String Titre, String Description, String Année){
+    public Oeuvre(String Titre, String Description, String Annee){
         this.Titre = Titre;
         this.Description = Description;
-        this.Année = Année;
-        GestionBD_INSERT.insert_Oeuvre(this.Titre,this.Année,this.Description);
+        this.Annee = Annee;
+        GestionBD_INSERT.insert_Oeuvre(this.Titre,this.Annee,this.Description);
     }
 
     // @Getter
@@ -30,12 +30,12 @@ public class Oeuvre {
         return this.Description;
     }
     public String getAnnée(){
-        return this.Année;
+        return this.Annee;
     }
 
     // @Setter
     public void setAnnée(String année){
-        this.Année= année;
+        this.Annee= année;
     }
     public void setTitre(String Titre){
         this.Titre = Titre;

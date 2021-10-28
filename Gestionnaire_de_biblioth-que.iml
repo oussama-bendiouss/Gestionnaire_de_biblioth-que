@@ -10,16 +10,16 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-controls:16" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-controls:win:16" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-graphics:16" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-graphics:win:16" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-fxml:16" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-fxml:win:16" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-web:16" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-web:win:16" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-media:16" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-media:win:16" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="Maven: org.openjfx:javafx-controls:16" level="project" />
+    <orderEntry type="library" exported="" name="Maven: org.openjfx:javafx-graphics:16" level="project" />
+    <orderEntry type="library" exported="" name="Maven: org.openjfx:javafx-controls:win:16" level="project" />
+    <orderEntry type="library" exported="" name="Maven: org.openjfx:javafx-graphics:win:16" level="project" />
+    <orderEntry type="library" exported="" name="Maven: org.openjfx:javafx-fxml:16" level="project" />
+    <orderEntry type="library" exported="" name="Maven: org.openjfx:javafx-fxml:win:16" level="project" />
+    <orderEntry type="library" exported="" name="Maven: org.openjfx:javafx-web:16" level="project" />
+    <orderEntry type="library" exported="" name="Maven: org.openjfx:javafx-web:win:16" level="project" />
+    <orderEntry type="library" exported="" name="Maven: org.openjfx:javafx-media:16" level="project" />
+    <orderEntry type="library" exported="" name="Maven: org.openjfx:javafx-media:win:16" level="project" />
     <orderEntry type="library" name="Maven: org.controlsfx:controlsfx:11.1.0" level="project" />
     <orderEntry type="library" name="Maven: com.dlsc.formsfx:formsfx-core:11.4.2" level="project" />
     <orderEntry type="library" name="Maven: net.synedra:validatorfx:0.1.13" level="project" />
@@ -39,6 +39,15 @@
       <library>
         <CLASSES>
           <root url="jar://$USER_HOME$/Downloads/sqlite-jdbc-3.27.2.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Downloads/openjfx-17.0.0.1_windows-x64_bin-sdk.zip!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
