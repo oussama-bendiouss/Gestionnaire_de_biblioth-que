@@ -15,17 +15,16 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import static Controleur.GestionBD_SELECT.select_Auteur;
+import static Controleur.Remplir.loadTable_Auteur;
+
+import Controleur.Remplir;
 
 
-public class Affichage_Auteur extends Application   {
-    public Scene su ;
+public class Affichage_Auteur   {
 
-    public Scene getS() {
-        return su;
-    }
 
-    @Override
-    public void start(Stage primaryStage) throws Exception {
+
+    public void Create_Auteur_Scene(Stage stage) {
 
         VBox vbox = new VBox();
 
@@ -50,7 +49,8 @@ public class Affichage_Auteur extends Application   {
         btnRefresh.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                primaryStage.setOnShown( (evt) -> loadTable(tblCustomers) );
+                stage.setOnShown( (evt) -> loadTable_Auteur(tblCustomers) );
+                stage.show();
             }});
 
         HBox topRightControls = new HBox();
@@ -74,7 +74,7 @@ public class Affichage_Auteur extends Application   {
         btnClose.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                primaryStage.close();
+                stage.close();
             }});
 
         bottomControls.getChildren().add( btnClose );
@@ -86,27 +86,17 @@ public class Affichage_Auteur extends Application   {
                 bottomControls
         );
 
-        Scene scene = new Scene(vbox );
+        Scene scene_Auteur = new Scene(vbox );
 
-        primaryStage.setScene( scene );
-        primaryStage.setWidth( 800 );
-        primaryStage.setHeight( 600 );
-        primaryStage.setTitle("Les oeuvres");
-        primaryStage.setOnShown( (evt) -> loadTable(tblCustomers) );
-        primaryStage.show();
-        su = scene;
-
+        stage.setScene( scene_Auteur );
+        stage.setWidth( 800 );
+        stage.setHeight( 600 );
+        stage.setTitle("Les auteurs");
+        stage.setOnShown( (evt) -> loadTable_Auteur(tblCustomers) );
+        stage.show();
+//return scene_Auteur;
     }
 
 
 
-   private void loadTable(TableView<Auteur> tblCustomers) {
-       for (int i = 0; i < select_Auteur().size(); i++) {
-          tblCustomers.getItems().add(select_Auteur().get(i));
-       }
-
-       // tblCustomers.getItems().add(new Oeuvre("Hola", "Washington fff","2020-10-21"));
-        //tblCustomers.getItems().add(new Oeuvre("Abe", "Lincoln", " 2021-1-02"));
-        //tblCustomers.getItems().add(new Oeuvre("Thomas", "Jefferson il est une fois", "2018-05-06"));
-    }
 }

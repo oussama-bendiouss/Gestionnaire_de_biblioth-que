@@ -15,10 +15,11 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import static Controleur.GestionBD_SELECT.select_Edition;
+import static Controleur.Remplir.loadTable_Edition;
 
-public class Affichage_Edition extends Application   {
-    @Override
-    public void start(Stage primaryStage) throws Exception {
+public class Affichage_Edition    {
+
+    public void Create_Edition_Scene(Stage primaryStage)  {
 
         VBox vbox = new VBox();
 
@@ -46,7 +47,7 @@ public class Affichage_Edition extends Application   {
         btnRefresh.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                primaryStage.setOnShown( (evt) -> loadTable(tblCustomers) );
+                primaryStage.setOnShown( (evt) -> loadTable_Edition(tblCustomers) );
             }});
 
         HBox topRightControls = new HBox();
@@ -88,19 +89,11 @@ public class Affichage_Edition extends Application   {
         primaryStage.setWidth( 800 );
         primaryStage.setHeight( 600 );
         primaryStage.setTitle("Les oeuvres");
-        primaryStage.setOnShown( (evt) -> loadTable(tblCustomers) );
+        primaryStage.setOnShown( (evt) -> loadTable_Edition(tblCustomers) );
         primaryStage.show();
     }
 
 
 
-   private void loadTable(TableView<Edition> tblCustomers) {
-       for (int i = 0; i < select_Edition().size(); i++) {
-           tblCustomers.getItems().add(select_Edition().get(i));
-       }
 
-       // tblCustomers.getItems().add(new Oeuvre("Hola", "Washington fff","2020-10-21"));
-        //tblCustomers.getItems().add(new Oeuvre("Abe", "Lincoln", " 2021-1-02"));
-        //tblCustomers.getItems().add(new Oeuvre("Thomas", "Jefferson il est une fois", "2018-05-06"));
-    }
 }

@@ -15,10 +15,11 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import static Controleur.GestionBD_SELECT.select_Catégorie;
+import static Controleur.Remplir.loadTable_Catégorie;
 
-public class Affichage_Categorie extends Application   {
-    @Override
-    public void start(Stage primaryStage) throws Exception {
+public class Affichage_Categorie    {
+
+    public void Create_Categorie_Scene(Stage primaryStage)  {
 
         VBox vbox = new VBox();
 
@@ -44,7 +45,7 @@ public class Affichage_Categorie extends Application   {
         btnRefresh.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                primaryStage.setOnShown( (evt) -> loadTable(tblCustomers) );
+                primaryStage.setOnShown( (evt) -> loadTable_Catégorie(tblCustomers) );
             }});
 
         HBox topRightControls = new HBox();
@@ -85,20 +86,12 @@ public class Affichage_Categorie extends Application   {
         primaryStage.setScene( scene );
         primaryStage.setWidth( 800 );
         primaryStage.setHeight( 600 );
-        primaryStage.setTitle("Les oeuvres");
-        primaryStage.setOnShown( (evt) -> loadTable(tblCustomers) );
+        primaryStage.setTitle("Les Catégories des utilisateurs");
+        primaryStage.setOnShown( (evt) -> loadTable_Catégorie(tblCustomers) );
         primaryStage.show();
     }
 
 
 
-   private void loadTable(TableView<Categorie> tblCustomers) {
-       for (int i = 0; i < select_Catégorie().size(); i++) {
-           tblCustomers.getItems().add(select_Catégorie().get(i));
-       }
 
-       // tblCustomers.getItems().add(new Oeuvre("Hola", "Washington fff","2020-10-21"));
-        //tblCustomers.getItems().add(new Oeuvre("Abe", "Lincoln", " 2021-1-02"));
-        //tblCustomers.getItems().add(new Oeuvre("Thomas", "Jefferson il est une fois", "2018-05-06"));
-    }
 }
