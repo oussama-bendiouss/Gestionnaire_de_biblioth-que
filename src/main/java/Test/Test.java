@@ -55,7 +55,7 @@ public class Test {
 */
 
 
-        System.out.println(select_Catégorie().get(2).getID_Catégorie());
+        System.out.println(select_Auteur().get(2).getNom());
         System.out.println(select_Catégorie().get(2).getMax_D());
         System.out.println(select_Catégorie().get(2).getMax_E());
         System.out.println(select_Catégorie().get(2).getNom());
