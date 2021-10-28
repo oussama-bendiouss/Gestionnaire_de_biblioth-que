@@ -3,43 +3,37 @@ package Modele;
 
 
 public class Categorie {
-    public String[] nom;
-    public String[] prenom;
-    public String[] pseudo;
-    public String ID;
-
-
-    public String[] getNom() {
-        return this.nom;
-    }
-    public String[] getPrenom(){
-        return this.prenom;
-    }
-    public String[] getPseudo(){
-        return this.pseudo;
-    }
-    public String getID(){
-        return this.ID;
+    int Max_E;
+    int Max_D;
+    int ID_Catégorie;
+    // @Constructeur
+    public Categorie(int Max_E, int Max_D){
+        this.Max_D= Max_D;
+        this.Max_E = Max_E;
     }
 
-    public void setNom(String[] nom) {
-        this.nom = nom;
+    // @Getter
+    public int getID_Catégorie(){
+        return this.ID_Catégorie;
     }
-    public void setPrenom(String[] prenom){
-        this.prenom= prenom;
+    public int getMax_E(){
+        return this.Max_E;
     }
-    public void setPseudo(String[] pseudo){
-        this.pseudo= pseudo;
+    public int getMax_D(){
+        return this.Max_D;
+    }
+
+    // @Setter
+    public void setMax_E(int Max_E){
+        this.Max_E = Max_E;
+    }
+    public void setMax_D(int Max_D){
+        this.Max_D= Max_D;
     }
 
 
-    public  Categorie(String[] n, String[] p, String[] pseudo){
-        this.nom = n;
-        this.prenom = p;
-        this.pseudo= pseudo;
-        this.ID= n[0]+p[0]+pseudo;
 
-    }
+
 
 
 
