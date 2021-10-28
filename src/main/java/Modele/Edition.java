@@ -1,33 +1,38 @@
 package Modele;
 
-import java.sql.Date;
-
+import Controleur.GestionBD_INSERT;
 public class Edition {
     int ISBN;
     int ID_Oeuvre;
-    Date Année;
+    String Année;
     int ID_Editeur;
 
     // @Constructeur
-    public Edition(int ISBN, int ID_Oeuvre, Date Année, int ID_Editeur){
+    public Edition(int ISBN, int ID_Oeuvre, String Année, int ID_Editeur){
         this.ISBN = ISBN;
         this.ID_Oeuvre = ID_Oeuvre;
         this.Année = Année;
         this.ID_Editeur = ID_Editeur;
+        GestionBD_INSERT.insert_Edition(this.ISBN,this.ID_Oeuvre,this.Année,this.ID_Editeur);
+
     }
 
     // @Setter
     public void setID_Oeuvre(int ID_Oeuvre){
         this.ID_Oeuvre = ID_Oeuvre;
+
     }
     public void setISBN(int ISBN){
         this.ISBN = ISBN;
+
     }
-    public void setAnnée(Date année){
+    public void setAnnée(String année){
         this.Année = année;
+
     }
     public void setID_Editeur( int ID_Editeur){
         this.ID_Editeur = ID_Editeur;
+
     }
 
     // @Getter
@@ -40,7 +45,7 @@ public class Edition {
     public int getISBN(){
         return this.ISBN;
     }
-    public Date getAnnée(){
+    public String getAnnée(){
         return this.Année;
     }
 }

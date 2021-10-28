@@ -1,5 +1,5 @@
 package Modele;
-
+import Controleur.GestionBD_INSERT;
 
 
 public class Auteur {
@@ -21,9 +21,11 @@ public class Auteur {
 // @Setter
     public void setNom(String nom) {
         this.nom = nom;
+
     }
     public void setPrenom(String  prenom){
         this.prenom= prenom;
+
     }
 
 // @Constructeur
@@ -31,6 +33,7 @@ public class Auteur {
     public  Auteur(String n, String p){
         this.nom = n;
         this.prenom = p;
+        GestionBD_INSERT.insert_Auteur(this.nom,this.prenom);
     }
 
 

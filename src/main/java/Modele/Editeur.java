@@ -1,5 +1,5 @@
 package Modele;
-import Controleur.GestionBD;
+import Controleur.GestionBD_INSERT;
 
 public class Editeur {
     String nom;
@@ -9,7 +9,8 @@ public class Editeur {
     // @Constructeur
     public Editeur(String nom){
       this.nom = nom;
-        Ajouter();
+        GestionBD_INSERT.insert_Editeur(this.nom);
+
     }
     // @Getter
     public int getID_Editeur(){
@@ -17,16 +18,14 @@ public class Editeur {
     }
     public String getNom(){
         return this.nom;
+
     }
 
     // @Setter
     public void setNom(String nom){
         this.nom = nom;
+
     }
 
-    public  void Ajouter(){
-        GestionBD.insert_Editeur(this.nom);
 
-        
-    }
 }

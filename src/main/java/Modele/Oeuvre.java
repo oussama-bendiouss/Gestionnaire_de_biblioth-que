@@ -1,18 +1,19 @@
 package Modele;
 
-import java.sql.Date;
+import Controleur.GestionBD_INSERT;
 
 public class Oeuvre {
     int ID_Oeuvre;
     String Titre;
     String Description;
-    Date Année;
+    String Année;
 
     // @Constructeur
-    public Oeuvre(String Titre, String Description, Date Année){
+    public Oeuvre(String Titre, String Description, String Année){
         this.Titre = Titre;
         this.Description = Description;
         this.Année = Année;
+        GestionBD_INSERT.insert_Oeuvre(this.Titre,this.Année,this.Description);
     }
 
     // @Getter
@@ -25,18 +26,22 @@ public class Oeuvre {
     public String getDescription(){
         return this.Description;
     }
-    public Date getAnnée(){
+    public String getAnnée(){
         return this.Année;
     }
 
     // @Setter
-    public void setAnnée(Date année){
+    public void setAnnée(String année){
         this.Année= année;
+
     }
     public void setTitre(String Titre){
         this.Titre = Titre;
+
+
     }
     public void setDescription(String Description){
         this.Description = Description;
+
     }
 }

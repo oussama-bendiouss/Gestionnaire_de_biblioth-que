@@ -4,7 +4,7 @@ import java.sql.*;
 
 import static Controleur.ConnectionBD.connect;
 
-public class GestionBD {
+public class GestionBD_INSERT {
 
     public static void insert_Editeur(String nom) {
         String sql = "INSERT INTO Editeur(Nom) VALUES(?)";
@@ -29,27 +29,27 @@ public class GestionBD {
             System.out.println(e.getMessage());
         }
     }
-    public static void insert_Oeuvre(String titre, Date annee,String description) {
+    public static void insert_Oeuvre(String titre, String annee,String description) {
         String sql = "INSERT INTO Oeuvre(Titre, Description, Année) VALUES(?,?,?)";
 
         try (Connection conn = connect();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, titre);
-            pstmt.setDate(3,annee);
+            pstmt.setString(3,annee);
             pstmt.setString(2, description);
             pstmt.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
     }
-    public static void insert_Edition(int ISBN, int ID_Oeuvre,Date Année, int ID_Editeur) {
+    public static void insert_Edition(int ISBN, int ID_Oeuvre, String Année, int ID_Editeur) {
         String sql = "INSERT INTO Edition(ISBN, ID_Oeuvre, Année, ID_Editeur) VALUES(?,?,?,?)";
 
         try (Connection conn = connect();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setInt(1, ISBN);
             pstmt.setInt(2, ID_Oeuvre);
-            pstmt.setDate(3,Année);
+            pstmt.setString(3,Année);
             pstmt.setInt(4, ID_Editeur);
             pstmt.executeUpdate();
         } catch (SQLException e) {
@@ -83,39 +83,42 @@ public class GestionBD {
             System.out.println(e.getMessage());
         }
     }
-    public static void insert_Emprunte(Date Début,Date fin) {
-        String sql = "INSERT INTO Emprunte(Début, Fin) VALUES(?,?)";
+    public static void insert_Emprunte(int ID_Oeuvre, int ID_Utilisateur, String Début,String fin) {
+        String sql = "INSERT INTO Emprunte(ID_Utilisateur, ID_Oeuvre, Début, Fin) VALUES(?,?,?,?)";
 
         try (Connection conn = connect();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setDate(1,Début);
-            pstmt.setDate(2,fin);
+            pstmt.setInt(1,ID_Utilisateur);
+            pstmt.setInt(2,ID_Oeuvre);
+            pstmt.setString(3,Début);
+            pstmt.setString(4,fin);
             pstmt.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
     }
-    public static void insert_Interdiction(int ID_Utilisateur, Date Début, Date fin) {
-        String sql = "INSERT INTO Interdiction(ID_Utilisateur, Date_Début, Date_Fin) VALUES(?,?,?)";
+    public static void insert_Interdiction(int ID_Utilisateur, String Début, String fin) {
+        String sql = "INSERT INTO Interdiction(ID_Utilisateur, Début, Fin) VALUES(?,?,?)";
 
         try (Connection conn = connect();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             pstmt.setInt(1,ID_Utilisateur);
-            pstmt.setDate(2,Début);
-            pstmt.setDate(3,fin);
+            pstmt.setString(2,Début);
+            pstmt.setString(3,fin);
             pstmt.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
     }
-    public static void insert_Catégorie(int MaxEmprunte,int MAxDurée) {
-        String sql = "INSERT INTO Catégorie(Max_Emprunte, Max_Durée) VALUES(?,?)";
+    public static void insert_Catégorie(int MaxEmprunte,int MAxDurée, String Nom) {
+        String sql = "INSERT INTO Catégorie(Nom, Max_Emprunte, Max_Durée) VALUES(?,?,?)";
 
         try (Connection conn = connect();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setInt(1,MaxEmprunte);
-            pstmt.setInt(2,MAxDurée);
+            pstmt.setString(1,Nom);
+            pstmt.setInt(2,MaxEmprunte);
+            pstmt.setInt(3,MAxDurée);
             pstmt.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
