@@ -1,6 +1,6 @@
 package Vue;
 
-import Modele.Oeuvre;
+import Modele.Utilisateur;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -14,7 +14,7 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import static Controleur.GestionBD_SELECT.select_Oeuvre;
+import static Controleur.GestionBD_SELECT.select_Utilisateur;
 
 public class Affichage_Utilisateur extends Application   {
     @Override
@@ -25,21 +25,27 @@ public class Affichage_Utilisateur extends Application   {
         HBox topControls = new HBox();
         VBox.setMargin( topControls, new Insets(10.0d) );
         topControls.setAlignment( Pos.BOTTOM_LEFT );
-        TableView<Oeuvre> tblCustomers = new TableView<>();
+        TableView<Utilisateur> tblCustomers = new TableView<>();
         tblCustomers.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
         VBox.setMargin( tblCustomers, new Insets(0.0d, 10.0d, 10.0d, 10.0d) );
         VBox.setVgrow( tblCustomers, Priority.ALWAYS );
 
-        TableColumn<Oeuvre, String> Titre = new TableColumn<>("Titre");
-        Titre.setCellValueFactory(new PropertyValueFactory<>("titre"));
+        TableColumn<Utilisateur, String> Titre = new TableColumn<>("ID_Utilisateur");
+        Titre.setCellValueFactory(new PropertyValueFactory<>("ID_Utilisateur"));
 
-        TableColumn<Oeuvre, String> Description = new TableColumn<>("Description");
-        Description.setCellValueFactory(new PropertyValueFactory<>("description"));
+        TableColumn<Utilisateur, String> Description = new TableColumn<>("Nom");
+        Description.setCellValueFactory(new PropertyValueFactory<>("Nom"));
 
-        TableColumn<Oeuvre, String> Année = new TableColumn<>("Année");
-        Année.setCellValueFactory(new PropertyValueFactory<>("Année"));
+        TableColumn<Utilisateur, String> Année = new TableColumn<>("Prenom");
+        Année.setCellValueFactory(new PropertyValueFactory<>("Prenom"));
+      //  TableColumn<Utilisateur, String> mail = new TableColumn<>("Mail");
+       // mail.setCellValueFactory(new PropertyValueFactory<>("Mail"));
+        //TableColumn<Utilisateur, String> nbl = new TableColumn<>("NB_Book");
+        //nbl.setCellValueFactory(new PropertyValueFactory<>("NB_Book"));
+        TableColumn<Utilisateur, String> IDC = new TableColumn<>("ID_Catégorie");
+        IDC.setCellValueFactory(new PropertyValueFactory<>("ID_Catégorie"));
 
-        tblCustomers.getColumns().addAll( Titre, Description, Année );
+        tblCustomers.getColumns().addAll( Titre, Description, Année,IDC );
         Button btnRefresh = new Button("Refresh");
         btnRefresh.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -92,9 +98,9 @@ public class Affichage_Utilisateur extends Application   {
 
 
 
-   private void loadTable(TableView<Oeuvre> tblCustomers) {
-       for (int i = 0; i < select_Oeuvre().size(); i++) {
-           tblCustomers.getItems().add(select_Oeuvre().get(i));
+   private void loadTable(TableView<Utilisateur> tblCustomers) {
+       for (int i = 0; i < select_Utilisateur().size(); i++) {
+           tblCustomers.getItems().add(select_Utilisateur().get(i));
        }
 
        // tblCustomers.getItems().add(new Oeuvre("Hola", "Washington fff","2020-10-21"));

@@ -1,6 +1,7 @@
 package Vue;
 
-import Modele.Oeuvre;
+import Modele.Emprunter;
+import Modele.Interdiciton;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -14,7 +15,7 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import static Controleur.GestionBD_SELECT.select_Oeuvre;
+import static Controleur.GestionBD_SELECT.select_Interdiction;
 
 public class Affichage_Interdiction extends Application   {
     @Override
@@ -25,21 +26,23 @@ public class Affichage_Interdiction extends Application   {
         HBox topControls = new HBox();
         VBox.setMargin( topControls, new Insets(10.0d) );
         topControls.setAlignment( Pos.BOTTOM_LEFT );
-        TableView<Oeuvre> tblCustomers = new TableView<>();
+        TableView<Interdiciton> tblCustomers = new TableView<>();
         tblCustomers.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
         VBox.setMargin( tblCustomers, new Insets(0.0d, 10.0d, 10.0d, 10.0d) );
         VBox.setVgrow( tblCustomers, Priority.ALWAYS );
 
-        TableColumn<Oeuvre, String> Titre = new TableColumn<>("Titre");
-        Titre.setCellValueFactory(new PropertyValueFactory<>("titre"));
+        TableColumn<Interdiciton, String> IDU = new TableColumn<>("ID_Utilisateur");
+        IDU.setCellValueFactory(new PropertyValueFactory<>("ID_Utilisateur"));
 
-        TableColumn<Oeuvre, String> Description = new TableColumn<>("Description");
-        Description.setCellValueFactory(new PropertyValueFactory<>("description"));
+        TableColumn<Interdiciton, String> IDI = new TableColumn<>("ID_Interdiction");
+        IDI.setCellValueFactory(new PropertyValueFactory<>("ID_Interdiction"));
 
-        TableColumn<Oeuvre, String> Année = new TableColumn<>("Année");
-        Année.setCellValueFactory(new PropertyValueFactory<>("Année"));
+        TableColumn<Interdiciton, String> Début = new TableColumn<>("Début");
+        Début.setCellValueFactory(new PropertyValueFactory<>("Début"));
+        TableColumn<Interdiciton, String> Fin = new TableColumn<>("Fin");
+        Fin.setCellValueFactory(new PropertyValueFactory<>("Fin"));
 
-        tblCustomers.getColumns().addAll( Titre, Description, Année );
+        tblCustomers.getColumns().addAll( IDU, IDI, Début, Fin );
         Button btnRefresh = new Button("Refresh");
         btnRefresh.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -92,9 +95,9 @@ public class Affichage_Interdiction extends Application   {
 
 
 
-   private void loadTable(TableView<Oeuvre> tblCustomers) {
-       for (int i = 0; i < select_Oeuvre().size(); i++) {
-           tblCustomers.getItems().add(select_Oeuvre().get(i));
+   private void loadTable(TableView<Interdiciton> tblCustomers) {
+       for (int i = 0; i < select_Interdiction().size(); i++) {
+           tblCustomers.getItems().add(select_Interdiction().get(i));
        }
 
        // tblCustomers.getItems().add(new Oeuvre("Hola", "Washington fff","2020-10-21"));
