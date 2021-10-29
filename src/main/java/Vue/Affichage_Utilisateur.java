@@ -51,7 +51,9 @@ public class Affichage_Utilisateur    {
         btnRefresh.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                primaryStage.setOnShown( (evt) -> loadTable_Utilisateur(tblCustomers) );
+                primaryStage.close();
+                Stage stage =new Stage();
+                Create_Utilisateur_Scene(stage);
             }});
 
         HBox topRightControls = new HBox();
@@ -71,6 +73,19 @@ public class Affichage_Utilisateur    {
         bottomControls.setAlignment(Pos.BOTTOM_RIGHT );
         VBox.setMargin( bottomControls, new Insets(10.0d) );
 
+        HBox bottomControls_Left = new HBox();
+        bottomControls_Left.setAlignment(Pos.BOTTOM_LEFT );
+        VBox.setMargin( bottomControls_Left, new Insets(10.0d) );
+        Button btnAdd = new Button("Ajouter");
+        btnAdd.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                Stage stage_Auteur = new Stage();
+                new Ajout_Utilisateur().Creat_Utilisateur(stage_Auteur);
+            }
+        });
+        bottomControls_Left.getChildren().add(btnAdd);
+
         Button btnClose = new Button("Close");
         btnClose.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -78,7 +93,7 @@ public class Affichage_Utilisateur    {
                 primaryStage.close();
             }});
 
-        bottomControls.getChildren().add( btnClose );
+        bottomControls.getChildren().addAll( bottomControls_Left, btnClose );
 
         vbox.getChildren().addAll(
                 topControls,

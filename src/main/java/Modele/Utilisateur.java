@@ -14,7 +14,7 @@ public class Utilisateur {
     public Utilisateur(){
 
     }
-    public Utilisateur(String prenom, String nom, String mail, int Nb_Livre, int ID_Catégorie){
+    public Utilisateur(String nom, String prenom, String mail, int Nb_Livre, int ID_Catégorie){
         this.ID_Catégorie = ID_Catégorie;
         this.Nom =nom;
         this.Prenom= prenom;

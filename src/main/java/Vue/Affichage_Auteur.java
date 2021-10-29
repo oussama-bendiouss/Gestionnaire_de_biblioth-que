@@ -36,6 +36,9 @@ public class Affichage_Auteur   {
         VBox.setMargin( tblCustomers, new Insets(0.0d, 10.0d, 10.0d, 10.0d) );
         VBox.setVgrow( tblCustomers, Priority.ALWAYS );
 
+        TableColumn<Auteur, String> ID = new TableColumn<>("ID_Auteur");
+        ID.setCellValueFactory(new PropertyValueFactory<>("ID_Auteur"));
+
         TableColumn<Auteur, String> Titre = new TableColumn<>("Nom");
         Titre.setCellValueFactory(new PropertyValueFactory<>("Nom"));
 
@@ -44,13 +47,14 @@ public class Affichage_Auteur   {
 
 
 
-        tblCustomers.getColumns().addAll( Titre, Description );
+        tblCustomers.getColumns().addAll( ID,Titre, Description );
         Button btnRefresh = new Button("Refresh");
         btnRefresh.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                stage.setOnShown( (evt) -> loadTable_Auteur(tblCustomers) );
-                stage.show();
+                stage.close();
+                Stage stage =new Stage();
+                Create_Auteur_Scene(stage);
             }});
 
         HBox topRightControls = new HBox();
@@ -66,9 +70,23 @@ public class Affichage_Auteur   {
 
         Separator sep = new Separator();
 
+
         HBox bottomControls = new HBox();
         bottomControls.setAlignment(Pos.BOTTOM_RIGHT );
         VBox.setMargin( bottomControls, new Insets(10.0d) );
+
+        HBox bottomControls_Left = new HBox();
+        bottomControls_Left.setAlignment(Pos.BOTTOM_LEFT );
+        VBox.setMargin( bottomControls_Left, new Insets(10.0d) );
+        Button btnAdd = new Button("Ajouter");
+        btnAdd.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                Stage stage_Auteur = new Stage();
+                new Ajout_Auteur().Creat_Auteur(stage_Auteur);
+            }
+        });
+        bottomControls_Left.getChildren().add(btnAdd);
 
         Button btnClose = new Button("Close");
         btnClose.setOnAction(new EventHandler<ActionEvent>() {
@@ -77,7 +95,7 @@ public class Affichage_Auteur   {
                 stage.close();
             }});
 
-        bottomControls.getChildren().add( btnClose );
+        bottomControls.getChildren().addAll( bottomControls_Left, btnClose );
 
         vbox.getChildren().addAll(
                 topControls,

@@ -45,7 +45,9 @@ public class Affichage_Categorie    {
         btnRefresh.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                primaryStage.setOnShown( (evt) -> loadTable_Catégorie(tblCustomers) );
+                primaryStage.close();
+                Stage stage =new Stage();
+                Create_Categorie_Scene(stage);
             }});
 
         HBox topRightControls = new HBox();
@@ -65,6 +67,19 @@ public class Affichage_Categorie    {
         bottomControls.setAlignment(Pos.BOTTOM_RIGHT );
         VBox.setMargin( bottomControls, new Insets(10.0d) );
 
+        HBox bottomControls_Left = new HBox();
+        bottomControls_Left.setAlignment(Pos.BOTTOM_LEFT );
+        VBox.setMargin( bottomControls_Left, new Insets(10.0d) );
+        Button btnAdd = new Button("Ajouter");
+        btnAdd.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                Stage stage_Auteur = new Stage();
+                new Ajout_Catégorie().Creat_Catégorie(stage_Auteur);
+            }
+        });
+        bottomControls_Left.getChildren().add(btnAdd);
+
         Button btnClose = new Button("Close");
         btnClose.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -72,7 +87,7 @@ public class Affichage_Categorie    {
                 primaryStage.close();
             }});
 
-        bottomControls.getChildren().add( btnClose );
+        bottomControls.getChildren().addAll( bottomControls_Left, btnClose );
 
         vbox.getChildren().addAll(
                 topControls,
