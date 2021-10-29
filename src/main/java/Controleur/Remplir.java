@@ -5,6 +5,7 @@ import javafx.scene.control.TableView;
 
 import static Controleur.GestionBD_SELECT.*;
 import static Controleur.GestionBD_SELECT.select_Editeur;
+import static Controleur.GestionBD_SEARCH.search_Editeur;
 
 public class Remplir {
 
@@ -22,6 +23,12 @@ public class Remplir {
     public static void loadTable_Editeur(TableView<Editeur> tblCustomers) {
         for (int i = 0; i < select_Editeur().size(); i++) {
             tblCustomers.getItems().add(select_Editeur().get(i));
+        }
+    }
+    public static void loadTable_Editeur_search(TableView<Editeur> tblCustomers, String nom) {
+        for (int i = 0; i < search_Editeur(nom).size(); i++) {
+            tblCustomers.getItems().add(search_Editeur(nom).get(i));
+
         }
     }
     public static void loadTable_Edition(TableView<Edition> tblCustomers) {
