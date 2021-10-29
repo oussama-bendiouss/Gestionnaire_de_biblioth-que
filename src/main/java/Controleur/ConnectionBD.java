@@ -61,4 +61,15 @@ public class ConnectionBD {
         }
         return conn;
     }
+    public static Connection connect(String d) {
+        // SQLite connection string
+        String url = "jdbc:sqlite:C:/Users/Fondation/Desktop/ST/BaseDonnées/"+d;
+        Connection conn = null;
+        try {
+            conn = DriverManager.getConnection(url);
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return conn;
+    }
 }

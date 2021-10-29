@@ -1,5 +1,6 @@
 package Vue;
 
+import Controleur.Authentification_Algo;
 import Modele.Oeuvre;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -100,5 +101,9 @@ public class Utilisateur_Test extends Application   {
        // tblCustomers.getItems().add(new Oeuvre("Hola", "Washington fff","2020-10-21"));
         //tblCustomers.getItems().add(new Oeuvre("Abe", "Lincoln", " 2021-1-02"));
         //tblCustomers.getItems().add(new Oeuvre("Thomas", "Jefferson il est une fois", "2018-05-06"));
+    }
+    public static void main(String[] args){
+        String a = new Authentification_Algo().sha256("oussama");
+        System.out.println(a);
     }
 }

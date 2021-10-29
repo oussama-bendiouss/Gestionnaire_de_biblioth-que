@@ -10,9 +10,9 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class Principale extends Application {
-    @Override
-    public void start(Stage stage) throws Exception {
+public class Principale {
+
+    public void Vue_Principale(Stage stage)  {
       //  Scene auteur = new Affichage_Auteur_Test().CreateScene();
         //stage.setScene(auteur);
         //stage.show();
