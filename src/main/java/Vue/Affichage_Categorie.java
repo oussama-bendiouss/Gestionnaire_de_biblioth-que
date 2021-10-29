@@ -1,6 +1,7 @@
 package Vue;
 
 import Modele.Categorie;
+import Modele.Utilisateur;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -33,14 +34,15 @@ public class Affichage_Categorie    {
 
         TableColumn<Categorie, String> Nom = new TableColumn<>("Nom");
         Nom.setCellValueFactory(new PropertyValueFactory<>("Nom"));
-
+        TableColumn<Categorie, String> IDC = new TableColumn<>("ID_Catégorie");
+        IDC.setCellValueFactory(new PropertyValueFactory<>("ID_Catégorie"));
         TableColumn<Categorie, String> M_E = new TableColumn<>("Max_E");
         M_E.setCellValueFactory(new PropertyValueFactory<>("Max_E"));
 
         TableColumn<Categorie, String> M_D = new TableColumn<>("Max_D");
         M_D.setCellValueFactory(new PropertyValueFactory<>("Max_D"));
 
-        tblCustomers.getColumns().addAll( Nom, M_E, M_D );
+        tblCustomers.getColumns().addAll( IDC,Nom, M_E, M_D );
         Button btnRefresh = new Button("Refresh");
         btnRefresh.setOnAction(new EventHandler<ActionEvent>() {
             @Override

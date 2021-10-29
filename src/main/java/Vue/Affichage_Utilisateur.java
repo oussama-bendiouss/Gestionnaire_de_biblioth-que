@@ -9,13 +9,14 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import static Controleur.GestionBD_SELECT.select_Utilisateur;
-import static Controleur.Remplir.loadTable_Utilisateur;
+import static Controleur.Remplir.*;
 
 public class Affichage_Utilisateur    {
 
@@ -55,13 +56,41 @@ public class Affichage_Utilisateur    {
                 Stage stage =new Stage();
                 Create_Utilisateur_Scene(stage);
             }});
-
+        HBox topControls_Left = new HBox();
+        topControls_Left.setAlignment(Pos.BOTTOM_LEFT );
+        VBox.setMargin( topControls_Left, new Insets(10.0d) );
+        TextField search = new TextField("Entrer le nom de l'utilisateur");
+        search.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                search.clear();
+            }
+        });
+        topControls_Left.getChildren().add(search);
         HBox topRightControls = new HBox();
         HBox.setHgrow(topRightControls, Priority.ALWAYS );
         topRightControls.setAlignment( Pos.BOTTOM_RIGHT );
-        Hyperlink signOutLink = new Hyperlink("Sign Out");
+        Hyperlink signOutLink = new Hyperlink("Search");
+        signOutLink.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                String nom = search.getText();
+                System.out.println(nom);
+                Scene scene = primaryStage.getScene();
+                primaryStage.close();
+                primaryStage.setScene(scene);
+                primaryStage.setWidth( 800 );
+                primaryStage.setHeight( 600 );
+                primaryStage.setTitle("Les utilisateurs");
+                tblCustomers.getItems().clear();
+                tblCustomers.refresh();
+                primaryStage.setOnShown( (evt) -> loadTable_Utilisateur_search(tblCustomers,nom) );
+                primaryStage.show();
 
-        topRightControls.getChildren().add( signOutLink );
+            }
+        });
+
+        topRightControls.getChildren().addAll( topControls_Left,signOutLink );
 
         topControls.getChildren().addAll( btnRefresh, topRightControls );
 

@@ -39,7 +39,7 @@ public class Affichage_Edition    {
 
         TableColumn<Edition, String > Année = new TableColumn<>("Année");
         Année.setCellValueFactory(new PropertyValueFactory<>("Année"));
-        TableColumn<Edition, Integer > ID_Editeur = new TableColumn<>("AID_Editeur");
+        TableColumn<Edition, Integer > ID_Editeur = new TableColumn<>("ID_Edition");
         ID_Editeur.setCellValueFactory(new PropertyValueFactory<>("ID_Editeur"));
 
         tblCustomers.getColumns().addAll( ID_Editeur,ID_Oeuvre, ISBN, Année );

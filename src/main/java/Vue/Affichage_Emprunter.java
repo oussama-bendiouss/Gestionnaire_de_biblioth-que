@@ -105,7 +105,7 @@ public class Affichage_Emprunter    {
         primaryStage.setScene( scene );
         primaryStage.setWidth( 800 );
         primaryStage.setHeight( 600 );
-        primaryStage.setTitle("Les oeuvres");
+        primaryStage.setTitle("Les empruntes");
         primaryStage.setOnShown( (evt) -> loadTable_Emprunte(tblCustomers) );
         primaryStage.show();
     }

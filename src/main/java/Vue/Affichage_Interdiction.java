@@ -105,7 +105,7 @@ public class Affichage_Interdiction    {
         primaryStage.setScene( scene );
         primaryStage.setWidth( 800 );
         primaryStage.setHeight( 600 );
-        primaryStage.setTitle("Les oeuvres");
+        primaryStage.setTitle("Les interdictions");
         primaryStage.setOnShown( (evt) -> loadTable_Interdiction(tblCustomers) );
         primaryStage.show();
     }

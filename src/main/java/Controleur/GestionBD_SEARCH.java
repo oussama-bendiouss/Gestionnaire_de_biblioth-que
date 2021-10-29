@@ -56,14 +56,15 @@ public class GestionBD_SEARCH {
         }
  return liste_Auteur;
     }
-    public static ArrayList<Oeuvre> select_Oeuvre() {
-        String sql = "SELECT ID_Oeuvre,Titre, Description, Année FROM Oeuvre";
+    public static ArrayList<Oeuvre> search_Oeuvre(String titre) {
+        String sql = "SELECT ID_Oeuvre,Titre, Description, Année FROM Oeuvre WHERE Titre = ? ";
 
         ArrayList<Oeuvre> liste_Oeuvre = new ArrayList<>();
         try (Connection conn = connect();
-             Statement stmt  = conn.createStatement();
-             ResultSet rs    = stmt.executeQuery(sql)){
-
+             PreparedStatement pstmt = conn.prepareStatement(sql)){
+            pstmt.setString(1, titre);
+            //      pstmt.executeUpdate();
+            ResultSet rs    = pstmt.executeQuery();
             // loop through the result set
             while (rs.next()) {
                 Oeuvre oeuvre = new Oeuvre();
@@ -135,13 +136,15 @@ return liste_Edition;
         return liste_Ecrire;
     }
 
-    public static ArrayList<Utilisateur> select_Utilisateur() {
-        String sql = "SELECT ID_Utilisateur,Nom, Prenom, Mail, Nb_livre, ID_Catégorie FROM Utilisateur";
+    public static ArrayList<Utilisateur> search_Utilisateur(String nom) {
+        String sql = "SELECT ID_Utilisateur,Nom, Prenom, Mail, Nb_livre, ID_Catégorie FROM Utilisateur WHERE Nom = ? ";
         ArrayList<Utilisateur> liste_Utilisateur = new ArrayList<>();
         try (Connection conn = connect();
-             Statement stmt  = conn.createStatement();
-             ResultSet rs    = stmt.executeQuery(sql)){
-
+             PreparedStatement pstmt = conn.prepareStatement(sql)
+             ){
+            pstmt.setString(1, nom);
+            //      pstmt.executeUpdate();
+            ResultSet rs    = pstmt.executeQuery();
             // loop through the result set
             while (rs.next()) {
                 Utilisateur utilisateur = new Utilisateur();

@@ -3,9 +3,11 @@ package Controleur;
 import Modele.*;
 import javafx.scene.control.TableView;
 
-import static Controleur.GestionBD_SELECT.*;
-import static Controleur.GestionBD_SELECT.select_Editeur;
+import static Controleur.GestionBD_SEARCH.search_Utilisateur;
+import static Controleur.GestionBD_SEARCH.search_Oeuvre;
 import static Controleur.GestionBD_SEARCH.search_Editeur;
+import static Controleur.GestionBD_SELECT.*;
+
 
 public class Remplir {
 
@@ -52,9 +54,19 @@ public class Remplir {
             tblCustomers.getItems().add(select_Oeuvre().get(i));
         }
    }
+    public static void loadTable_Oeuvre_search(TableView<Oeuvre> tblCustomers, String titre) {
+        for (int i = 0; i < search_Oeuvre(titre).size(); i++) {
+            tblCustomers.getItems().add(search_Oeuvre(titre).get(i));
+        }
+    }
     public static void loadTable_Utilisateur(TableView<Utilisateur> tblCustomers) {
         for (int i = 0; i < select_Utilisateur().size(); i++) {
             tblCustomers.getItems().add(select_Utilisateur().get(i));
+        }
+    }
+    public static void loadTable_Utilisateur_search(TableView<Utilisateur> tblCustomers, String nom) {
+        for (int i = 0; i < search_Utilisateur(nom).size(); i++) {
+            tblCustomers.getItems().add(search_Utilisateur(nom).get(i));
         }
     }
 }
